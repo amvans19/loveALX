@@ -12,7 +12,7 @@ const openn = '#a3e49b',
           'wholefoods' :   {0 : [[07,00],[21,00]], 1 : [[07,00],[21,00]], 2 : [[07,00],[21,00]], 3 : [[07,00],[21,00]], 4 : [[07,00],[21,00]], 5 : [[07,00],[21,00]], 6 : [[07,00],[21,00]]},
           'harristeeter' : {0 : [[07,00],[20,00]], 1 : [[07,00],[20,00]], 2 : [[07,00],[20,00]], 3 : [[07,00],[20,00]], 4 : [[07,00],[20,00]], 5 : [[07,00],[20,00]], 6 : [[07,00],[20,00]]},
           'traderjoes' :   {0 : [[09,00],[19,00]], 1 : [[09,00],[19,00]], 2 : [[09,00],[19,00]], 3 : [[09,00],[19,00]], 4 : [[09,00],[19,00]], 5 : [[09,00],[19,00]], 6 : [[09,00],[19,00]]}
-        },
+      },
       displayName = {
         'momo' : `Momo Sushi`,
         'dunkin' : `Dunkin Donuts`,
@@ -38,9 +38,9 @@ function formatDate(hours) {
 };
 
 function generateWindows(businessesAndHours, displayName) {
-    const bizID = Object.keys(businessesAndHours);
-    const displayID = Object.keys(displayName)
-    const humanHours = {
+    const bizID = Object.keys(businessesAndHours),
+          displayID = Object.keys(displayName),
+          humanHours = {
         '[0,0]' : '12am', '[0,30]' : '12:30am',
         '[1,0]' : '1am', '[1,30]' : '1:30am',
         '[2,0]' : '2am', '[2,30]' : '2:30am',
@@ -65,8 +65,9 @@ function generateWindows(businessesAndHours, displayName) {
         '[21,0]' : '9pm', '[21,30]' : '9:30pm',
         '[22,0]' : '10pm', '[22,30]' : '10:30pm',
         '[23,0]' : '11pm', '[23,30]' : '11:30pm', 
-    }
-    const divs = []
+    };
+        
+    const divs = [];
     for (let i = 0; i < Object.keys(businessesAndHours).length; i++) {
         divs.push(`<div id="${bizID[i]}" class="store w-node-c664a0cf5efb-def45619">
                 <h4 class="heading">${displayName[displayID[i]]}</h4>
